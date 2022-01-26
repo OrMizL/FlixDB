@@ -8,7 +8,6 @@ const MainNavigation = () => {
       </div>
       <form>
         <input type='text' placeholder='Search Movies/TV' name='search' />
-        <i class='fas fa-camera'></i>
       </form>
       <ul className={classes['nav-options']}>
         <li>Home</li>
