@@ -1,3 +1,6 @@
+import { Fragment } from 'react';
+import MainNavigation from './components/Layout/MainNavigation';
+
 function App() {
   const fetchMoviesHandler = async () => {
     const results = await fetch(
@@ -8,9 +11,14 @@ function App() {
   };
 
   return (
-    <div>
-      <button onClick={fetchMoviesHandler}>Retrieve Movies</button>
-    </div>
+    <Fragment>
+      <header>
+        <MainNavigation />
+      </header>
+      <div>
+        <button onClick={fetchMoviesHandler}>Retrieve Movies</button>
+      </div>
+    </Fragment>
   );
 }
 
