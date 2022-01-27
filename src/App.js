@@ -3,6 +3,7 @@ import MainNavigation from './components/Layout/MainNavigation';
 import MoviesList from './components/MoviesList';
 import configData from './config.json';
 import classes from './App.module.css';
+import Slider from './components/UI/Slider';
 
 function App() {
   const [popularMoviesData, setPopularMoviesData] = useState([]);
@@ -29,8 +30,6 @@ function App() {
     const monthString = todayMonth > 9 ? '-' : '-0';
     const todayDate = `${today.getFullYear()}${monthString}${todayMonth}${dayString}${todayDay}`;
     const startMonth = today.getFullYear() + '-' + today.getMonth() + 1 + '-01';
-
-    console.log(todayDate);
 
     const results = await fetch(
       `https://api.themoviedb.org/3/discover/movie?api_key=${configData.API_KEY}&language=en-US&primary_release_date.gte=${startMonth}&primary_release_date.lte=${todayDate}&sort_by=vote_average.desc&vote_count.gte=100&vote_average.gte=7`
@@ -69,10 +68,12 @@ function App() {
       <header>
         <MainNavigation />
       </header>
-      <div className={classes.headings}>
-        <h1>Featured Movies</h1>
+      <div className={classes.featured}>
+        <span className={classes['featured-title']}>
+          <h1>Featured Movies</h1>
+        </span>
       </div>
-      <MoviesList moviesData={featuredMoviesData} />
+      <Slider results={featuredMoviesData} />
       <div className={classes.headings}>
         <h1>Most Popular Movies</h1>
       </div>

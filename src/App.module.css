@@ -1,4 +1,4 @@
-.headings h1 {
+.headings {
   width: fit-content;
   color: white;
   margin-top: 10px;
@@ -21,4 +21,17 @@ footer .links {
 
 footer span {
   padding: 5px;
+}
+
+.featured {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+  color: white;
+  margin-top: 10px;
+}
+
+.featured-title {
+  border-bottom: #66fcf1 solid 4px;
 }

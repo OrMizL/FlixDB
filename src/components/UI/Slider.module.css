@@ -1,0 +1,33 @@
+.slider {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* background-color: mediumseagreen; */
+  position: relative;
+  width: 100%;
+  margin: 20px 0px;
+}
+
+.arrowLeft {
+  color: white;
+  padding: 10px;
+}
+
+.arrowLeft:hover {
+  cursor: pointer;
+}
+
+.arrowRight {
+  color: white;
+  padding: 10px;
+}
+
+.arrowRight:hover {
+  cursor: pointer;
+}
+
+.env {
+  /* background-color: mediumslateblue; */
+  max-width: 25%;
+  max-height: 25%;
+}
