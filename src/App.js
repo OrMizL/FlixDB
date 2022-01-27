@@ -6,7 +6,39 @@ import classes from './App.module.css';
 
 function App() {
   const [popularMoviesData, setPopularMoviesData] = useState([]);
-  const [bestMoviesData, setbestMoviesData] = useState([]);
+  const [bestMoviesData, setBestMoviesData] = useState([]);
+  const [featuredMoviesData, setFeaturedMoviesData] = useState([]);
+
+  // A function that can be used for dynamically fetching movies. Future task.
+
+  // const fetchMovies = async (query) => {
+  //   const results = await fetch(
+  //     `https://api.themoviedb.org/3/discover/movie?api_key=${
+  //       configData.API_KEY
+  //     }&language=en-US${query ? query : ''}`
+  //   );
+  //   const data = await results.json();
+  //   return data;
+  // };
+
+  const fetchFeaturedMovies = async () => {
+    const today = new Date();
+    const todayDay = today.getDate();
+    const todayMonth = today.getMonth() + 1;
+    const dayString = todayDay > 9 ? '-' : '-0';
+    const monthString = todayMonth > 9 ? '-' : '-0';
+    const todayDate = `${today.getFullYear()}${monthString}${todayMonth}${dayString}${todayDay}`;
+    const startMonth = today.getFullYear() + '-' + today.getMonth() + 1 + '-01';
+
+    console.log(todayDate);
+
+    const results = await fetch(
+      `https://api.themoviedb.org/3/discover/movie?api_key=${configData.API_KEY}&language=en-US&primary_release_date.gte=${startMonth}&primary_release_date.lte=${todayDate}&sort_by=vote_average.desc&vote_count.gte=100&vote_average.gte=7`
+    );
+    const data = await results.json();
+    const dataTopTen = data.results.slice(0, 10);
+    setFeaturedMoviesData(dataTopTen);
+  };
 
   const fetchPopularMovies = async () => {
     const results = await fetch(
@@ -23,12 +55,13 @@ function App() {
     );
     const data = await results.json();
     const dataTopTen = data.results.slice(0, 10);
-    setbestMoviesData(dataTopTen);
+    setBestMoviesData(dataTopTen);
   };
 
   useEffect(() => {
     fetchPopularMovies();
     fetchBestMovies();
+    fetchFeaturedMovies();
   }, []);
 
   return (
@@ -37,6 +70,10 @@ function App() {
         <MainNavigation />
       </header>
       <div className={classes.headings}>
+        <h1>Featured Movies</h1>
+      </div>
+      <MoviesList moviesData={featuredMoviesData} />
+      <div className={classes.headings}>
         <h1>Most Popular Movies</h1>
       </div>
       <MoviesList moviesData={popularMoviesData} />
@@ -44,6 +81,13 @@ function App() {
         <h1>Best Movies by Rating</h1>
       </div>
       <MoviesList moviesData={bestMoviesData} />
+      <footer>
+        <div>Made by Or Mizrahi</div>
+        <div className={classes.links}>
+          <span>contact</span>
+          <span>more about us</span>
+        </div>
+      </footer>
     </Fragment>
   );
 }
