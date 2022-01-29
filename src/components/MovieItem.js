@@ -8,7 +8,7 @@ const MovieItem = (props) => {
     <Card>
       <div className={classes.pic}>
         <img
-          src={`https://image.tmdb.org/t/p/w500/${props.poster}`}
+          src={`https://image.tmdb.org/t/p/w92/${props.poster}`}
           alt='poster'
         ></img>
       </div>

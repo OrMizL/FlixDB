@@ -35,6 +35,7 @@ const Slider = (props) => {
                 poster={slide.poster_path}
                 rating={slide.vote_average}
                 releaseYear={slide.release_date.split('-')[0]}
+                overview={slide.overview}
               />
             )}
           </div>

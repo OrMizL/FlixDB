@@ -6,6 +6,7 @@
   position: relative;
   width: 100%;
   margin: 20px 0px;
+  overflow: hidden;
 }
 
 .arrowLeft {
@@ -15,6 +16,7 @@
 
 .arrowLeft:hover {
   cursor: pointer;
+  color: #66fcf1;
 }
 
 .arrowRight {
@@ -24,10 +26,11 @@
 
 .arrowRight:hover {
   cursor: pointer;
+  color: #66fcf1;
 }
 
 .env {
   /* background-color: mediumslateblue; */
-  max-width: 25%;
-  max-height: 25%;
+  max-width: 80%;
+  max-height: 80%;
 }

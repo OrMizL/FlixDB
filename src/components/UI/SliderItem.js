@@ -15,6 +15,7 @@ const SliderItem = (props) => {
         <div className={classes.title}>
           <h3>{props.title}</h3>
         </div>
+        <div className={classes.overview}>{props.overview}</div>
         <div className={classes.extras}>
           <div className={classes.extrasItem}>
             {props.rating}
