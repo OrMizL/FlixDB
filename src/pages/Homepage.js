@@ -22,17 +22,6 @@ const Homepage = () => {
   // };
 
   const fetchFeaturedMovies = async () => {
-    // const today = new Date();
-    // const todayDay = today.getDate();
-    // const todayMonth = today.getMonth() + 1;
-    // const dayString = todayDay > 9 ? '-' : '-0';
-    // const monthString = todayMonth > 9 ? '-' : '-0';
-    // const todayDate = `${today.getFullYear()}${monthString}${todayMonth}${dayString}${todayDay}`;
-    // const startMonth = today.getFullYear() + '-' + today.getMonth() + 1 + '-01';
-
-    // const results = await fetch(
-    //   `https://api.themoviedb.org/3/discover/movie?api_key=${configData.API_KEY}&language=en-US&primary_release_date.gte=${startMonth}&primary_release_date.lte=${todayDate}&sort_by=vote_average.desc&vote_count.gte=100&vote_average.gte=7`
-    // );
     const results = await fetch(
       `https://api.themoviedb.org/3/movie/upcoming?api_key=${configData.API_KEY}`
     );

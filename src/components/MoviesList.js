@@ -9,6 +9,7 @@ const MoviesList = (props) => {
           return (
             <MovieItem
               key={entry.id}
+              id={entry.id}
               poster={entry.poster_path}
               title={entry.title}
               rating={entry.vote_average}
