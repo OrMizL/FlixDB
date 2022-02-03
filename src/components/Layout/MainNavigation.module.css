@@ -2,7 +2,7 @@
   background-color: #1f2833;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-start;
   padding: 2px 5px;
 }
 .logo {

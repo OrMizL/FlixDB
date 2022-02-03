@@ -24,14 +24,14 @@ const MainNavigation = () => {
             Genres
           </NavLink>
         </li>
-        <li>
+        {/* <li>
           <NavLink
             to='/watchlist'
             className={(navData) => (navData.isActive ? classes.active : '')}
           >
             Watchlist
           </NavLink>
-        </li>
+        </li> */}
         <li>
           <NavLink
             to='/about'
@@ -41,9 +41,9 @@ const MainNavigation = () => {
           </NavLink>
         </li>
       </ul>
-      <form>
+      {/* <form>
         <input type='text' placeholder='Search Movies/TV' name='search' />
-      </form>
+      </form> */}
     </div>
   );
 };

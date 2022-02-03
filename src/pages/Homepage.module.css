@@ -35,3 +35,14 @@ footer span {
 .featured-title {
   border-bottom: #66fcf1 solid 4px;
 }
+
+footer a {
+  text-decoration: none;
+  font-style: italic;
+  color: white;
+}
+
+p {
+  color: white;
+  text-align: center;
+}

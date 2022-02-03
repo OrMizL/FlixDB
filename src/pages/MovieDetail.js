@@ -14,6 +14,7 @@ const MovieDetail = () => {
     runtime: null,
     releasedOn: '',
     votes: null,
+    imdbId: null,
   });
 
   const params = useParams();
@@ -34,6 +35,7 @@ const MovieDetail = () => {
       runtime: data.runtime,
       releasedOn: data.release_date,
       votes: data.vote_count,
+      imdbId: data.imdb_id,
     });
   }, [movieId]);
 

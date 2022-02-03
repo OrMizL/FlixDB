@@ -51,3 +51,8 @@
   /* border-left: #66fcf1 solid 1px; */
   /* border-right: #66fcf1 solid 1px; */
 }
+
+.link {
+  text-decoration: none;
+  color: white;
+}

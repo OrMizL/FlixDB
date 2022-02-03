@@ -31,6 +31,7 @@ const Slider = (props) => {
           <div className={classes.env} key={index}>
             {index === currentSlide && (
               <SliderItem
+                id={slide.id}
                 title={slide.title}
                 poster={slide.poster_path}
                 rating={slide.vote_average}
